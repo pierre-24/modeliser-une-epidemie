@@ -1,0 +1,10 @@
+# transition rates
+V b .2    # S → I
+V g .1    # I → R
+# compartiments
+C "S" .99 # susceptible
+C "I" .01 # infected
+C "R" .0  # recovered
+# transitions
+T 0 1 b rst
+T 1 2 g rs
