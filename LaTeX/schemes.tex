@@ -30,6 +30,15 @@
 \usepackage{braket}
 
 \begin{document}
+	
+	\begin{center}
+		\begin{tikzpicture}
+			\node[draw,fill=blue!25] (S) {S};
+			\node[draw,fill=red!25,right=3cm of S] (I) {I};
+			\draw[-latex] (S.north) .. controls +(60:1.5) and +(120:1.5) .. (I.north) node[midway,above]{$\beta S(t)\,I(t)$};
+			\draw[-latex] (I.south) .. controls +(-120:1.5) and +(-60:1.5) .. (S.south) node[midway,below]{$\gamma\,I(t)$};
+		\end{tikzpicture}
+	\end{center}
 
 \begin{center}
 	\begin{tikzpicture}
@@ -48,9 +57,36 @@
 		\node[draw,fill=green!25,right=3cm of I] (R) {R};
 		\draw[-latex] (S.east) -- (I.west) node[midway,above]{$\beta S(t)\,I(t)$};
 		\draw[-latex] (I.east) -- (R.west) node[midway,above]{$\gamma\,I(t)$};
-		\draw[-latex] (I.south) .. controls +(240:1.5) and (-60:1.5) .. (S.south) node[midway,below]{$\alpha I(t)$};
-		\draw[-latex] (R.north) .. controls +(120:2) and (60:2) .. (S.north) node[midway,above]{$\alpha R(t)$};
+		\draw[-latex] (I.south) .. controls +(240:1.5) and +(-60:1.5) .. (S.south) node[midway,below]{$\alpha I(t)$};
+		\draw[-latex] (R.north) .. controls +(120:2) and +(60:2) .. (S.north) node[midway,above]{$\alpha R(t)$};
 		\draw[-latex] (S.north west) .. controls +(140:1.5) and +(220:1.5) .. (S.south west) node[midway,left]{$\alpha S(t)$};
+	\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+	\node[draw,fill=blue!25] (S) {S};
+	\node[draw,fill=orange!25,right=3cm of S] (E) {E};
+	\node[draw,fill=red!25,right=3cm of E] (I) {I};
+	\node[draw,fill=green!25,right=3cm of I] (R) {R};
+	\draw[-latex] (S.east) -- (E.west) node[midway,above]{$\beta S(t)\,I(t)$};
+	\draw[-latex] (E.east) -- (I.west) node[midway,above]{$\eta\,E(t)$};
+	\draw[-latex] (I.east) -- (R.west) node[midway,above]{$\gamma\,I(t)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+	\begin{tikzpicture}
+		\node[draw,fill=blue!25] (S) {S};
+		\node[draw,fill=orange!25,right=3cm of S] (E) {E};
+		\node[draw,fill=red!25,above=1cm of E] (I) {I};
+		\node[draw,fill=cyan!25,below=1cm of E] (Q) {Q};
+		\node[draw,fill=green!25,right=3cm of E] (R) {R};
+		\draw[-latex] (S.east) -- (E.west) node[midway,above]{$\beta S(t)\,I(t)$};
+		\draw[-latex] (E.north) -- (I.south) node[midway,right]{$\eta\,E(t)$};
+		\draw[-latex] (E.south) -- (Q.north) node[midway,right]{$\zeta\,E(t)$};
+		\draw[-latex] (I.east) .. controls +(0:1.5) and +(90:1.5) ..  (R.north) node[midway,above]{$\gamma\,I(t)$};
+		\draw[-latex] (Q.east) .. controls +(0:1.5) and +(-90:1.5) .. (R.south) node[midway,below]{$\Gamma\,Q(t)$};
 	\end{tikzpicture}
 \end{center}
 
