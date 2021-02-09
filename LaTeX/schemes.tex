@@ -50,6 +50,18 @@
 	\end{tikzpicture}
 \end{center}
 
+
+\begin{center}
+	\begin{tikzpicture}
+		\node[draw,fill=blue!25] at (0:2) (S) {S};
+		\node[draw,fill=red!25] at (120:2) (I) {I};
+		\node[draw,fill=green!25] at (240:2) (R) {R};
+		\draw[-latex] (S.north west) -- (I.east) node[midway,anchor=south west]{$\beta S(t)\,I(t)$};
+		\draw[-latex] (I.south) -- (R.north) node[midway,left]{$\gamma\,I(t)$};
+		\draw[-latex] (R.east) -- (S.south west) node[midway,anchor=north west]{$\delta R(t)$};
+	\end{tikzpicture}
+\end{center}
+
 \begin{center}
 	\begin{tikzpicture}
 		\node[draw,fill=blue!25] (S) {S};
